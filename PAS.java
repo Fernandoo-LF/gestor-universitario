@@ -71,5 +71,18 @@ public class PAS extends Trabajador {
     public void generarReporte() {
         System.out.println("Generando reporte del personal del area: " + area);
     }
+    //TOSTRING
+    @Override
+    public String toString() {
+        return "Nombre: " + getNombre() +
+               "\nFecha de nacimiento: " + getFechaNacimiento() +
+               "\nDireccion: " + getDireccion() +
+               "\nFecha de ingreso: " + getFechaIngreso() +
+               "\nSalario: " + getSalario() +
+               "\nPuesto: " + getPuesto() +
+               "\nArea: " + area +
+               "\nNivel: " + nivel +
+               "\nTurno: " + turno;
+    }
 
 }

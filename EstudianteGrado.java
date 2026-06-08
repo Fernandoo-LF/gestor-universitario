@@ -95,4 +95,18 @@ public class EstudianteGrado extends Estudiante {
         }
     }
 
+    //TOSTRING
+    @Override
+    public String toString() {
+        return "Nombre: " + getNombre() +
+               "\nFecha de nacimiento: " + getFechaNacimiento() +
+               "\nDireccion: " + getDireccion() +
+               "\nMatricula: " + getMatricula() +
+               "\nPromedio: " + getPromedio() +
+               "\nFecha de ingreso: " + getFechaIngreso() +
+               "\nTitulacion: " + titulacion +
+               "\nCreditos: " + creditos +
+               "\nServicio Social: " + servicioSocial;
+    }
+
 }

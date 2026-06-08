@@ -80,4 +80,15 @@ public class Estudiante extends Persona {
         }
     }
 
+    //TOSTRING
+    @Override
+    public String toString() {
+        return "Nombre: " + getNombre() +
+               "\nFecha de nacimiento: " + getFechaNacimiento() +
+               "\nDireccion: " + getDireccion() +
+               "\nMatricula: " + matricula +
+               "\nPromedio: " + promedio +
+               "\nFecha de ingreso: " + fechaIngreso;
+    }
+
 }

@@ -61,4 +61,12 @@ public class Persona {
         return obtenerEdad() >= 60;
     }
 
+    // METODO TOSTRING
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre +
+               "\nFecha de nacimiento: " + fechaNacimiento +
+               "\nDireccion: " + direccion;
+    }
+
 }

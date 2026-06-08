@@ -79,4 +79,18 @@ public class EstudianteDoctorado extends Estudiante {
         System.out.println("Tema de investigacion: " + temaTesis);
     }
 
+    //TOSTRING
+    @Override
+    public String toString() {
+        return "Nombre: " + getNombre() +
+               "\nFecha de nacimiento: " + getFechaNacimiento() +
+               "\nDireccion: " + getDireccion() +
+               "\nMatricula: " + getMatricula() +
+               "\nPromedio: " + getPromedio() +
+               "\nFecha de ingreso: " + getFechaIngreso() +
+               "\nPrograma: " + programa +
+               "\nTema de tesis: " + temaTesis +
+               "\nDirector de tesis: " + directorTesis;
+    }
+
 }

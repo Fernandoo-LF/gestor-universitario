@@ -65,5 +65,15 @@ public class Trabajador extends Persona {
     public void solicitarVacaciones() {
         System.out.println(getNombre() + " ha solicitado vacaciones.");
     }
+    //TOSTRING
+    @Override
+    public String toString() {
+        return "Nombre: " + getNombre() +
+               "\nFecha de nacimiento: " + getFechaNacimiento() +
+               "\nDireccion: " + getDireccion() +
+               "\nFecha de ingreso: " + fechaIngreso +
+               "\nSalario: " + salario +
+               "\nPuesto: " + puesto;
+    }
 
 }

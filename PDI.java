@@ -74,4 +74,18 @@ public class PDI extends Trabajador {
                            horasDocencia + " horas.");
     }
 
+    //TOSTRING
+    @Override
+    public String toString() {
+        return "Nombre: " + getNombre() +
+               "\nFecha de nacimiento: " + getFechaNacimiento() +
+               "\nDireccion: " + getDireccion() +
+               "\nFecha de ingreso: " + getFechaIngreso() +
+               "\nSalario: " + getSalario() +
+               "\nPuesto: " + getPuesto() +
+               "\nCategoria: " + categoria +
+               "\nEspecialidad: " + especialidad +
+               "\nHoras de docencia: " + horasDocencia;
+    }
+
 }
