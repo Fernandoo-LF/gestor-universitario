@@ -13,8 +13,8 @@ public class Departamento {
     // CONSTRUCTOR
 
     public Departamento(String nombre,
-                        String codigo,
-                        String ubicacion) {
+            String codigo,
+            String ubicacion) {
 
         this.nombre = nombre;
         this.codigo = codigo;
@@ -71,7 +71,6 @@ public class Departamento {
         System.out.println("No hay espacio para mas profesores.");
     }
 
-
     // Muestra el personal del departamento
     public void listarPersonal() {
 
@@ -82,10 +81,29 @@ public class Departamento {
             if (profesores[i] != null) {
 
                 System.out.println(
-                    profesores[i].getNombre()
-                );
+                        profesores[i].getNombre());
             }
         }
+    }
+
+    // Busca un profesor por nombre usando recursion
+    public int buscarProfesorRecursivo(String nombreProfesor) {
+        return buscarProfesorRecursivo(nombreProfesor, 0);
+    }
+
+    // Metodo auxiliar recursivo
+    private int buscarProfesorRecursivo(String nombreProfesor, int posicion) {
+
+        if (posicion >= profesores.length) {
+            return -1;
+        }
+
+        if (profesores[posicion] != null &&
+                profesores[posicion].getNombre().equalsIgnoreCase(nombreProfesor)) {
+            return posicion;
+        }
+
+        return buscarProfesorRecursivo(nombreProfesor, posicion + 1);
     }
 
     // METODO TOSTRING
@@ -94,8 +112,8 @@ public class Departamento {
     public String toString() {
 
         return "Nombre: " + nombre +
-               "\nCodigo: " + codigo +
-               "\nUbicacion: " + ubicacion;
+                "\nCodigo: " + codigo +
+                "\nUbicacion: " + ubicacion;
     }
 
 }
