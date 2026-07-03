@@ -15,8 +15,8 @@ public class Universidad {
     // CONSTRUCTOR
 
     public Universidad(String nombre,
-                       String ciudad,
-                       int fundacion) {
+            String ciudad,
+            int fundacion) {
 
         this.nombre = nombre;
         this.ciudad = ciudad;
@@ -75,7 +75,6 @@ public class Universidad {
         System.out.println("No hay espacio para mas estudiantes.");
     }
 
-
     // Contrata un trabajador
     public void contratarTrabajador(Trabajador trabajador) {
 
@@ -110,14 +109,74 @@ public class Universidad {
         System.out.println("No hay espacio para mas departamentos.");
     }
 
+    // Busca un estudiante por nombre usando recursion
+    public int buscarEstudianteRecursivo(String nombreEstudiante) {
+        return buscarEstudianteRecursivo(nombreEstudiante, 0);
+    }
+
+    // Metodo auxiliar recursivo para estudiantes
+    private int buscarEstudianteRecursivo(String nombreEstudiante, int posicion) {
+
+        if (posicion >= estudiantes.length) {
+            return -1;
+        }
+
+        if (estudiantes[posicion] != null &&
+                estudiantes[posicion].getNombre().equalsIgnoreCase(nombreEstudiante)) {
+            return posicion;
+        }
+
+        return buscarEstudianteRecursivo(nombreEstudiante, posicion + 1);
+    }
+
+    // Busca un trabajador por nombre usando recursion
+    public int buscarTrabajadorRecursivo(String nombreTrabajador) {
+        return buscarTrabajadorRecursivo(nombreTrabajador, 0);
+    }
+
+    // Metodo auxiliar recursivo para trabajadores
+    private int buscarTrabajadorRecursivo(String nombreTrabajador, int posicion) {
+
+        if (posicion >= trabajadores.length) {
+            return -1;
+        }
+
+        if (trabajadores[posicion] != null &&
+                trabajadores[posicion].getNombre().equalsIgnoreCase(nombreTrabajador)) {
+            return posicion;
+        }
+
+        return buscarTrabajadorRecursivo(nombreTrabajador, posicion + 1);
+    }
+
+    // Busca un departamento por nombre usando recursion
+    public int buscarDepartamentoRecursivo(String nombreDepartamento) {
+        return buscarDepartamentoRecursivo(nombreDepartamento, 0);
+    }
+
+    // Metodo auxiliar recursivo para departamentos
+    private int buscarDepartamentoRecursivo(String nombreDepartamento, int posicion) {
+
+        if (posicion >= departamentos.length) {
+            return -1;
+        }
+
+        if (departamentos[posicion] != null &&
+                departamentos[posicion].getNombre().equalsIgnoreCase(nombreDepartamento)) {
+            return posicion;
+        }
+
+        return buscarDepartamentoRecursivo(nombreDepartamento, posicion + 1);
+    }
+
     // METODO TOSTRING
 
     @Override
     public String toString() {
 
         return "Nombre: " + nombre +
-               "\nCiudad: " + ciudad +
-               "\nFundacion: " + fundacion;
+                "\nCiudad: " + ciudad +
+                "\nFundacion: " + fundacion;
     }
 
 }
